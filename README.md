@@ -1,0 +1,2 @@
+# novacoretechnoly
+novacoretechnoly company 
