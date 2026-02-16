@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Découvrir nos Services | NovaCore Technologies</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #00d9ff;
+            --secondary: #9d4edd;
+            --dark: #0a0a0f;
+            --darker: #050508;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: #f5f5f7;
+            overflow-x: hidden;
+        }
+
+        .electric-gradient {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .glow {
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 25px rgba(0, 217, 255, 0.7);
+        }
+
+        .border-glow {
+            border: 1px solid rgba(0, 217, 255, 0.2);
+        }
+
+        .border-glow:hover {
+            border: 1px solid rgba(0, 217, 255, 0.8);
+        }
+
+        .glow-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: 10%;
+            left: 5%;
+            animation: float 25s infinite ease-in-out;
+        }
+
+        .circle-2 {
+            width: 400px;
+            height: 400px;
+            background: var(--secondary);
+            bottom: 10%;
+            right: 5%;
+            animation: float 30s infinite ease-in-out reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .service-card {
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 10px;
+            padding: 30px;
+            background: rgba(10, 10, 15, 0.5);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 30px rgba(0, 217, 255, 0.3);
+            transform: translateY(-10px);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            color: #f5f5f7;
+            border-radius: 8px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(245, 245, 247, 0.5);
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Circles de fond -->
+    <div class="glow-circle circle-1"></div>
+    <div class="glow-circle circle-2"></div>
+
+    <!-- Navigation -->
+    <nav class="border-glow backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="INDEX.html" class="text-2xl font-bold electric-gradient">NovaCore</a>
+            <div class="hidden md:flex gap-8">
+                <a href="INDEX.html" class="nav-link text-gray-300">Accueil</a>
+                <a href="services.html" class="nav-link text-cyan-400">Services</a>
+                <a href="projects.html" class="nav-link text-gray-300">Projets</a>
+                <a href="add-products.html" class="nav-link text-gray-300">Produits</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 py-20">
+        <div class="max-w-4xl text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                Découvrez Nos <span class="electric-gradient">Services</span>
+            </h1>
+            <p class="text-xl text-gray-400 mb-8">
+                Transformez votre vision en réalité avec nos solutions innovantes et sur mesure
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="max-w-7xl mx-auto px-4 py-20">
+        <h2 class="text-4xl font-bold text-center mb-16">
+            Nos <span class="electric-gradient">Services Principaux</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Service 1 -->
+            <div class="service-card">
+                <div class="text-4xl mb-4 text-cyan-400">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Développement Web</h3>
+                <p class="text-gray-400 mb-4">
+                    Créez des applications web modernes, performantes et scalables avec les dernières technologies
+                </p>
+                <a href="#contact" class="text-cyan-400 hover:text-cyan-300 transition">En savoir plus →</a>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-card">
+                <div class="text-4xl mb-4 text-cyan-400">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Applications Mobile</h3>
+                <p class="text-gray-400 mb-4">
+                    Développez des applications mobiles natives et cross-platform pour iOS et Android
+                </p>
+                <a href="#contact" class="text-cyan-400 hover:text-cyan-300 transition">En savoir plus →</a>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-card">
+                <div class="text-4xl mb-4 text-cyan-400">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Solutions Base de Données</h3>
+                <p class="text-gray-400 mb-4">
+                    Architektez et optimisez vos bases de données pour une performance maximale
+                </p>
+                <a href="#contact" class="text-cyan-400 hover:text-cyan-300 transition">En savoir plus →</a>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-card">
+                <div class="text-4xl mb-4 text-cyan-400">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Infrastructure Cloud</h3>
+                <p class="text-gray-400 mb-4">
+                    Déployez et gérez votre infrastructure sur le cloud avec sécurité et fiabilité
+                </p>
+                <a href="#contact" class="text-cyan-400 hover:text-cyan-300 transition">En savoir plus →</a>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-card">
+                <div class="text-4xl mb-4 text-cyan-400">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Cybersécurité</h3>
+                <p class="text-gray-400 mb-4">
+                    Protégez vos données et systèmes avec nos solutions de sécurité avancées
+                </p>
+                <a href="#contact" class="text-cyan-400 hover:text-cyan-300 transition">En savoir plus →</a>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-card">
+                <div class="text-4xl mb-4 text-cyan-400">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Consulting & Stratégie</h3>
+                <p class="text-gray-400 mb-4">
+                    Guidez votre transformation numérique avec nos experts en stratégie IT
+                </p>
+                <a href="#contact" class="text-cyan-400 hover:text-cyan-300 transition">En savoir plus →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-5xl mx-auto px-4 py-20">
+        <h2 class="text-4xl font-bold text-center mb-4">
+            Parlons de Votre <span class="electric-gradient">Projet</span>
+        </h2>
+        <p class="text-center text-gray-400 mb-12">
+            Remplissez le formulaire ci-dessous et notre équipe vous contactera rapidement
+        </p>
+
+        <form class="contact-form space-y-6 border-glow p-8 rounded-lg bg-rgba(10, 10, 15, 0.5) backdrop-filter backdrop-blur-xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" placeholder="Votre Nom" required class="w-full">
+                <input type="email" placeholder="Votre Email" required class="w-full">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" placeholder="Votre Entreprise" class="w-full">
+                <input type="tel" placeholder="Numéro de Téléphone" class="w-full">
+            </div>
+
+            <input type="text" placeholder="Sujet de votre demande" required class="w-full">
+
+            <textarea placeholder="Décrivez votre projet en détail..." rows="6" required class="w-full"></textarea>
+
+            <div class="flex gap-4">
+                <button type="submit" class="btn-primary">
+                    Envoyer le Formulaire
+                </button>
+                <button type="reset" class="border-glow px-8 py-3 rounded-lg font-weight-600 hover:bg-cyan-400 hover:bg-opacity-10 transition">
+                    Réinitialiser
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-cyan-500 border-opacity-20 mt-20 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-400">
+            <p>&copy; 2026 NovaCore Technologies. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
